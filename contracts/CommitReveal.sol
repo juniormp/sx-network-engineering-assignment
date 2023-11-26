@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity 0.7.5;
+pragma solidity 0.8.19;
 
+// Uncomment this line to use console.log
+// import "hardhat/console.sol";
 
 contract CommitReveal {
     // The two choices for your vote. Note that these are just symbolic and for display purposes only. 

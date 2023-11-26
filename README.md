@@ -1,10 +1,10 @@
-# Full-stack Web3 Engineering Assignment
+# Web3 Engineering Assignment
 
 Thank you for your interest in joining the SX engineering team!
 
 This document is just a quick test to see where your coding and problem solving skills are with something related to dApp development. It’s designed to be straightforward and not take too much of your time.
 
-Since a lot of this position will be JavaScript/Typescript-based app development and integrating with Solidity contracts, we've created a task that, in some capacity, represents the tooling you'll be working with on a day-to-day basis with us.
+Since a lot of this position will involve integrating with Solidity contracts, we've created a task that, in some capacity, represents the tooling you'll be working with on a day-to-day basis with us.
 
 ## Background
 
@@ -37,38 +37,19 @@ Things you don't have to do:
 - Publish this as an NPM package
 - Write any further tests for the contracts or exhaustive tests for your script. The script just needs to work.
 - Add any functionality for "switching" between accounts. A user can vote multiple times with different secrets and that is totally fine.
-- Deploy this on any public blockchain. Use a local blockchain such as `ganache-cli`.
+- Deploy this on any public blockchain. Use a local blockchain such as `hardhat` (running `npm run deploy` will deploy locally provided that you have `npx hardhat node` running).
 
-For interacting with the contracts, you can use `ethers.js`, `web3`, or the native truffle contract wrappers. Up to you.
+For interacting with the contracts, we recommend `ethers.js` although you can use any framework you'd like.
 
 ## Setup
 
-First, install the dependencies. You'll need a local Ethereum blockchain to deploy the contracts and run the contract tests if you want. We recommend `ganache`. You can install ganache with
-
-`npm install -g ganache-cli`
-
-and start it up with
-
-`ganache-cli`
-
-To get the code deployed onto the blockchain, just `truffle migrate` in this repo once `ganache-cli` is up.
-
-If you want to run the tests (not necessary to complete this assignment, just to verify the functionality of the solidity contracts), you'll have to monkey patch the line
-
-`node_modules/@0x/utils/lib/src/provider_utils.js:81`
-
-with
-
-`if (_.includes(supportedProvider.send.toString().replace(' ', '').replace(' ', ''), 'function(payload,callback)')) :`
-
-otherwise you'll run into a `TypeError: Cannot read property 'then' of undefined` as there is some annoying bug with web3 currently.
+First, install the dependencies. You'll need a local Ethereum blockchain to deploy the contracts and run the contract tests if you want. We recommend `hardhat`.
 
 ## Other notes
 
-- We've already written the migration script with pre-defined choices (see `1_initial_migration.js`) and there are some helper npm scripts in `package.json` in case you don't want to install truffle globally.
-- `truffle-config.js` is already configured to point to your local ganache on port `8545`.
-- The `test` folder includes some example code to interact with the contracts using the `truffle-contract` wrappers if you need some hints. **You don't have to use truffle to interact with the contracts as mentioned above**.
-- To help with transitioning from the commit phase to the reveal phase, we've provided some example code in the `test` folder. Ganache has a special command called `evm_increaseTime` which can artifically set the next block's timestamp and `@0xproject` provides a nice wrapper around this command. Alternatively you can just wait. Just remember that once you go forward in time you can't go back. Yu'll need to restart your `ganache-cli` to do that.
+- We've already written the deploy script (see `deploy.ts`) and there are some helper npm scripts in `package.json` in case you don't want to install hardhat globally.
+- The `test` folder includes some example code to interact with the contracts if you need some hints. **You don't have to use ethers and hardhat to interact with the contracts as mentioned above**.
+- To help with transitioning from the commit phase to the reveal phase, we've provided some example code in the `test` folder. Ethers has a special command called `evm_increaseTime` which can artifically set the next block's timestamp. Alternatively you can just wait. Just remember that once you go forward in time you can't go back. You'll need to restart your local chain to do that.
 
 All you have to do is write your script.
 
@@ -80,6 +61,6 @@ We're interested in your coding style, your familarity with developer tooling fo
 
 Fork this repo, and _make your new repo private_. Write your code in a sub-folder in this repo, and edit this `README` to include instructions on how to use your script. Feel free to change anything in the repo except for the `CommitReveal.sol` contract.
 
-Send `julian@nextgenbt.com` the _private_ GitHub link when you're done. Additionally, please give `@mrwillis` access.
+Send `daniel@nextgenbt.com` the _private_ GitHub link when you're done. Additionally, please give `@dankostiuk` access.
 
 Good luck!
