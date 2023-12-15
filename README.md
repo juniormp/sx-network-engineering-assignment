@@ -64,3 +64,36 @@ Fork this repo, and _make your new repo private_. Write your code in a sub-folde
 Send `daniel@nextgenbt.com` the _private_ GitHub link when you're done. Additionally, please give `@dankostiuk` access.
 
 Good luck!
+
+# Task Assigment
+
+ The script is designed to run as a CLI application, allowing users to execute various commands related to voting, such as committing a vote, revealing a vote, querying the winner, and inspecting vote commitments and emitted events. This approach provides a user-friendly and interactive way to interact with the blockchain smart contract.
+
+## Key Components
+
+- Command Line Interface
+- Ethereum Contract Interaction
+- Event Listening
+- Asynchronous Flow
+- Error Handling and Validation
+- Modular Function Design
+
+## Set up 
+
+Rename `.env-example` file to `.env`
+
+Install dependencies:
+
+`npm install`
+
+Compile contract:
+
+`npm run compile`
+
+Run Hardhat node:
+
+`npm run node`
+
+Deploy contract in Hardhat localhost node:
+
+`npm run deploy`
