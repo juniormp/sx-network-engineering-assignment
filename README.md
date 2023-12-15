@@ -65,7 +65,7 @@ Send `daniel@nextgenbt.com` the _private_ GitHub link when you're done. Addition
 
 Good luck!
 
-# Task Assigment
+# Task Assignment
 
  The script is designed to run as a CLI application, allowing users to execute various commands related to voting, such as committing a vote, revealing a vote, querying the winner, and inspecting vote commitments and emitted events. This approach provides a user-friendly and interactive way to interact with the blockchain smart contract.
 
@@ -77,6 +77,8 @@ Good luck!
 - Asynchronous Flow
 - Error Handling and Validation
 - Modular Function Design
+
+This project utilizes environment variables to manage different configurations for interacting with Ethereum networks (like Mainnet, Ropsten, Rinkeby, or local development networks). This approach enhances security, flexibility, and maintainability.
 
 ## Set up 
 
