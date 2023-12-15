@@ -7,13 +7,17 @@
     "@typechain/ethers-v6": "^0.5.1",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "dotenv": "^16.3.1",
     "ethers": "^6.8.1"
   },
   "scripts": {
     "test": "hardhat test",
-    "compile": "tsc",
+    "compile-tsc": "tsc",
     "typechain": "hardhat typechain",
-    "deploy": "hardhat run scripts/deploy.ts --network localhost"
+    "compile": "npx hardhat compile",
+    "node": "npx hardhat node",
+    "deploy": "hardhat run scripts/deploy.ts --network localhost",
+    "start": "ts-node src/CommitReveal.ts"
   },
   "author": "Dan Kostiuk <daniel@nextgenbt.com>",
   "license": "MIT",
